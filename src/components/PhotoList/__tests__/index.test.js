@@ -1,18 +1,23 @@
-// __tests__/PhotoList.test.js
-import React from 'react'
-import { render, cleanup } from '@testing-library/react'
-import '@testing-library/jest-dom/extend-expect'
-import PhotoList from '../'
+// 1. imports ===================================================================== //
+import React from "react";
+import { render, cleanup } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
+import PhotoList from "..";
 
-afterEach(cleanup)
 
-describe('PhotoList is rendering', () => {
-  it('renders', () => {
-    render(<PhotoList />);
-  });
+// 3. configure the testing environment =========================================== //
+afterEach(cleanup);
 
-  it('renders', () => {
-    const { asFragment } = render(<PhotoList />)
-    expect(asFragment()).toMatchSnapshot()
-  });
+
+// 4. tests ======================================================================= //
+describe("PhotoList is rendering", () => {
+    it("renders", () => {
+        render(<PhotoList />);
+    });
+
+    it("renders", () => {
+        const { asFragment } = render(<PhotoList />);
+
+        expect(asFragment()).toMatchSnapshot();
+    });
 });

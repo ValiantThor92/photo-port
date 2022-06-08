@@ -1,4 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Nav component matches snapshot 1`] = `
 <DocumentFragment>
   <header
@@ -13,7 +14,7 @@ exports[`Nav component matches snapshot 1`] = `
           aria-label="camera"
           role="img"
         >
-           📸
+          📸
         </span>
          Oh Snap!
       </a>
@@ -29,14 +30,21 @@ exports[`Nav component matches snapshot 1`] = `
             data-testid="about"
             href="#about"
           >
-            About me
+            About Me
           </a>
         </li>
         <li
-          class="mx-2"
+          class="mx-2 navActive"
         >
           <span>
             Contact
+          </span>
+        </li>
+        <li
+          class="mx-1 false"
+        >
+          <span>
+            Portraits
           </span>
         </li>
       </ul>
