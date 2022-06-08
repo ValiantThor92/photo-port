@@ -6,6 +6,8 @@ function Nav(props) {
     categories = [],
     setCurrentCategory,
     currentCategory,
+    contactSelected,
+    setContactSelected
   } = props;
 
 
@@ -22,21 +24,30 @@ function Nav(props) {
         </a>
       </h2>
       <nav>
+      <Nav
+        categories={categories}
+        setCurrentCategory={setCurrentCategory}
+        currentCategory={currentCategory}
+        contactSelected={contactSelected}
+        setContactSelected={setContactSelected}
+      ></Nav>
         <ul className="flex-row">
-          <li className="mx-2">
-            <a data-testid="about" href="#about">
+        <li className={`mx-2 ${contactSelected && 'navActive'}`}>
+          <a data-testid="about" href="#about" onClick={() => setContactSelected(false)}>
               About me
             </a>
           </li>
           <li className={"mx-2"}>
-            <span onClick={() => handleClick('Contact')}>
-              Contact
-            </span>
+          <span onClick={() => {
+            setCurrentCategory(category);
+            setContactSelected(false);
+          }}
+          >Contact</span>
           </li>
           {categories.map((category) => (
             <li
               className={`mx-1 ${
-                currentCategory.name === category.name
+                currentCategory.name === category.name && !contactSelected && `navActive`
                 }`}
               key={category.name}
             >
